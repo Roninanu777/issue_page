@@ -13,6 +13,20 @@ function App() {
     return (
         <Container>
             <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
+            <h1>Issue list</h1>
         </Container>
     );
 }
