@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import Heading from "./components/Heading";
 
 //Styles-------------------------------------------------------
 const Container = styled.div`
-    width: 50%;
     padding: 3%;
-    background-color: red;
+    background-color: #f7f7f7;
 `;
 //-------------------------------------------------------------
 
 function App() {
     return (
         <Container>
-            <h1>Issue list</h1>
+            <Heading />
         </Container>
     );
 }
