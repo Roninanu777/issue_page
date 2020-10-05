@@ -17,5 +17,9 @@ body {
   width: inherit;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+#root {
+  width: 50%;
+  height: 100%;
 }
