@@ -4,8 +4,7 @@ import Heading from "./components/Heading";
 
 //Styles-------------------------------------------------------
 const Container = styled.div`
-    padding: 3%;
-    background-color: #f7f7f7;
+    width: 100%;
 `;
 //-------------------------------------------------------------
 
