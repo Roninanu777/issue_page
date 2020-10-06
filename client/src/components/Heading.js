@@ -16,7 +16,7 @@ const Select = styled.select`
     outline: none;
     border: 1px solid #ababab;
     border-radius: 5px 0 0 5px;
-    background-color: #ededed;
+    background-color: #f7f7f7;
 `;
 
 const Input = styled.input`
