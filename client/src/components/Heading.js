@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 //-----------------------------------------------------------
@@ -33,21 +33,29 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     color: white;
+    outline: none;
+    cursor: pointer;
     background-color: #159930;
 `;
 
 //-----------------------------------------------------------
 
 export default function Heading() {
+    const [value, setValue] = useState("filters");
+
+    let handleChange = (e) => {
+        setValue(e.target.value);
+    };
+
     return (
         <Container>
-            <Select name="Filters">
-                <option selected hidden>
+            <Select value={value} onChange={handleChange}>
+                <option value="filters" hidden>
                     Filters
                 </option>
-                <option>Show all</option>
-                <option>Open</option>
-                <option>Closed</option>
+                <option value="show-all">Show all</option>
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
             </Select>
             <Input type="text" placeholder="is:issue is:open" />
             <Button type="submit">New issue</Button>
