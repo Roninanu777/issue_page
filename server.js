@@ -1,9 +1,13 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
+const helmet = require("helmet");
 const morgan = require("morgan");
 const apiRouter = require("./routes/api");
 const app = express();
+
+// Initialized helmet
+app.use(helmet());
 
 app.use(cors());
 // Request logger
