@@ -6,7 +6,7 @@
     "scripts": {
         "start": "node server.js",
         "dev": "nodemon server.js",
-        "auto": "concurrently --names 'client, server' -c 'cyan,magenta' \"cd client && npm start\" \"npm run dev\""
+        "auto": "concurrently --names 'client,server' -c 'cyan,magenta' \"cd client && npm start\" \"npm run dev\""
     },
     "keywords": [],
     "author": "",
