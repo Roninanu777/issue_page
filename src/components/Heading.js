@@ -35,7 +35,7 @@ const Button = styled.button`
   color: white;
   outline: none;
   cursor: pointer;
-  background-color: #159930;
+  background-color: #156783;
 `;
 
 //-----------------------------------------------------------
@@ -46,6 +46,10 @@ export default function Heading(props) {
   let handleChange = (e) => {
     setValue(e.target.value);
     props.getTerm(e.target.value);
+  };
+
+  let handleOpen = () => {
+    props.getOpen(true);
   };
 
   return (
@@ -59,7 +63,9 @@ export default function Heading(props) {
         <option value="closed">Closed</option>
       </Select>
       <Input type="text" placeholder="is:issue is:open" />
-      <Button type="button">New issue</Button>
+      <Button type="button" onClick={handleOpen}>
+        New issue
+      </Button>
     </Container>
   );
 }
