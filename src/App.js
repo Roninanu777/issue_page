@@ -23,26 +23,21 @@ const Overlay = styled.div`
 //-------------------------------------------------------------
 
 function App() {
-  const [term, setTerm] = useState("show-all");
+  const [submitted, setSubmitted] = useState(false);
   const [open, setOpen] = useState(false);
+  const [term, setTerm] = useState("show-all");
 
-  let handleTerm = (term) => {
-    setTerm(term);
-  };
+  let handleTerm = (filter) => setTerm(filter);
 
-  let handleOpen = (open) => {
-    setOpen(open);
-  };
+  let handleOpen = (open) => setOpen(open);
 
-  let handleClose = () => {
-    setOpen(false);
-  };
+  let handleClose = () => setOpen(false);
 
   return (
     <Container>
       <Heading getTerm={handleTerm} getOpen={handleOpen} />
       {open ? <Overlay onClick={handleClose} /> : null}
-      <Modal show={open} />
+      <Modal show={open} close={handleClose} />
     </Container>
   );
 }
