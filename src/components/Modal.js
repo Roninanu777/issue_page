@@ -10,6 +10,9 @@ const Container = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: ${(props) =>
+    props.show ? "translateY(7vh)" : "translateY(-30vh)"};
+  transition: all 0.5s cubic-bezier(0.24, 1.01, 0.98, 1.04);
 `;
 
 const Input = styled.input`
@@ -30,12 +33,12 @@ const Button = styled.button`
   font-size: 1rem;
   outline: none;
   cursor: pointer;
-  background-color: #159930;
+  background-color: #156783;
 `;
 
 //-----------------------------------------------------------
 
-export default function Modal() {
+export default function Modal(props) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
@@ -53,10 +56,12 @@ export default function Modal() {
       title: title,
       author: author,
     });
+    setTitle("");
+    setAuthor("");
   };
 
   return (
-    <Container onSubmit={handleSubmit}>
+    <Container show={props.show} onSubmit={handleSubmit}>
       <Input
         type="text"
         value={title}
