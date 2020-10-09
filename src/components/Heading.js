@@ -48,9 +48,7 @@ export default function Heading(props) {
     props.getTerm(e.target.value);
   };
 
-  let handleOpen = () => {
-    props.getOpen(true);
-  };
+  let handleOpen = () => props.getOpen(true);
 
   return (
     <Container>
