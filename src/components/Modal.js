@@ -10,6 +10,8 @@ const Container = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
   transform: ${(props) =>
     props.show ? "translateY(7vh)" : "translateY(-30vh)"};
   transition: all 0.5s cubic-bezier(0.24, 1.01, 0.98, 1.04);
@@ -41,14 +43,11 @@ const Button = styled.button`
 export default function Modal(props) {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  let handleTitle = (e) => {
-    setTitle(e.target.value);
-  };
+  let handleTitle = (e) => setTitle(e.target.value);
 
-  let handleAuthor = (e) => {
-    setAuthor(e.target.value);
-  };
+  let handleAuthor = (e) => setAuthor(e.target.value);
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -58,6 +57,7 @@ export default function Modal(props) {
     });
     setTitle("");
     setAuthor("");
+    props.close();
   };
 
   return (
@@ -74,7 +74,9 @@ export default function Modal(props) {
         onChange={handleAuthor}
         placeholder="Author"
       />
-      <Button type="submit">Add</Button>
+      <Button type="submit" onClick={handleSubmit}>
+        Add
+      </Button>
     </Container>
   );
 }
