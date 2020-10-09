@@ -6,10 +6,20 @@ import Modal from "./components/Modal";
 //Styles-------------------------------------------------------
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+
+const Overlay = styled.div`
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  align-self: center;
+`;
+
 //-------------------------------------------------------------
 
 function App() {
@@ -24,10 +34,15 @@ function App() {
     setOpen(open);
   };
 
+  let handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Container>
       <Heading getTerm={handleTerm} getOpen={handleOpen} />
-      <Modal />
+      {open ? <Overlay onClick={handleClose} /> : null}
+      <Modal show={open} />
     </Container>
   );
 }
